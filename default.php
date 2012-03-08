@@ -38,10 +38,12 @@ class BigCountPlugin extends Gdn_Plugin {
 		if (!is_numeric($Discussion->CountBookmarks))
 			$Discussion->CountBookmarks = 0;
 			
-		echo Wrap(Wrap(T('Comments')) . Gdn_Format::BigNumber($Discussion->CountComments - 1), 'div', array('class' => $Css));
+		echo Wrap(Wrap(T('Comments')) . Gdn_Format::BigNumber($Discussion->CountComments - 1), 
+				  'div', array('class' => $Css));
 		
 		// Views
-		echo Wrap(Wrap(T('Views')) . Gdn_Format::BigNumber($Discussion->CountViews), 'div', array('class' => 'StatBox ViewsBox'));
+		echo Wrap(Wrap(T('Views')) . Gdn_Format::BigNumber($Discussion->CountViews),
+				  'div', array('class' => 'StatBox ViewsBox'));
 	
 		// Follows
 		$Title = T($Discussion->Bookmarked == '1' ? 'Unbookmark' : 'Bookmark');
@@ -53,7 +55,8 @@ class BigCountPlugin extends Gdn_Plugin {
 				array('title' => $Title)
 			), 'div', array('class' => 'StatBox FollowsBox'));
 		} else {
-			echo Wrap(Wrap(T('Follows')) . $Discussion->CountBookmarks, 'div', array('class' => 'StatBox FollowsBox'));
+			echo Wrap(Wrap(T('Follows')) . $Discussion->CountBookmarks,
+					  'div', array('class' => 'StatBox FollowsBox'));
 		}	
 	}
 }
