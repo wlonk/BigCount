@@ -16,6 +16,7 @@ class BigCountPlugin extends Gdn_Plugin {
 	 */
 	public function AddJsCss($Sender) {
 		$Sender->AddCSSFile('bigcount.css', 'plugins/BigCount');
+        $Sender->AddJSFile('plugins/BigCount/bigcount.js');
 	}
 	public function DiscussionsController_Render_Before($Sender) {
 		$this->AddJsCss($Sender);
